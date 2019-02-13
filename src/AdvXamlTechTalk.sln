@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragAndDrop", "..\DragAndDr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{86D39738-635E-45EF-B578-37C46252E6C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttachedProperties", "AttachedProperties\AttachedProperties.csproj", "{BED21652-9E4D-4FB7-B212-A81B65F766D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{86D39738-635E-45EF-B578-37C46252E6C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86D39738-635E-45EF-B578-37C46252E6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86D39738-635E-45EF-B578-37C46252E6C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED21652-9E4D-4FB7-B212-A81B65F766D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED21652-9E4D-4FB7-B212-A81B65F766D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED21652-9E4D-4FB7-B212-A81B65F766D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED21652-9E4D-4FB7-B212-A81B65F766D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
