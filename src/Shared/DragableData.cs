@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DragAndDrop
+namespace Shared
 {
     public class DragableData
     {

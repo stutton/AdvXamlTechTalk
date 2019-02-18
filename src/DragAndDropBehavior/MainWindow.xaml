@@ -1,0 +1,55 @@
+﻿<Window x:Class="DragAndDropBehavior.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:local="clr-namespace:DragAndDropBehavior"
+        mc:Ignorable="d"
+        Title="Drag and Drop Behavior" 
+        Height="450" 
+        Width="800">
+    
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Grid.Column="0">
+            
+            <TextBlock DockPanel.Dock="Top"
+                       Text="Source List" />
+            
+            <ListBox x:Name="DragSourceList"
+                     ItemsSource="{Binding ListOne}"
+                     DisplayMemberPath="Name">
+                
+                <i:Interaction.Behaviors>
+                    <local:DragBehavior />
+                    <local:DropBehavior DropCommand="{Binding MoveFromListTwoToListOneCommand}" />
+                </i:Interaction.Behaviors>
+                
+            </ListBox>
+        </DockPanel>
+
+        <DockPanel Grid.Column="2">
+            
+            <TextBlock DockPanel.Dock="Top"
+                       Text="Target List" />
+            
+            <ListBox x:Name="DropTargetList"
+                     ItemsSource="{Binding ListTwo}"
+                     DisplayMemberPath="Name">
+                
+                <i:Interaction.Behaviors>
+                    <local:DragBehavior />
+                    <local:DropBehavior DropCommand="{Binding MoveFromListOneToListTwoCommand}" />
+                </i:Interaction.Behaviors>
+                
+            </ListBox>
+        </DockPanel>
+    </Grid>
+    
+</Window>
