@@ -13,16 +13,50 @@ namespace DragAndDrop
     {
         public DragAndDropVm()
         {
-            SourceList.Add(new DragableData { Name = "Steve" });
-            SourceList.Add(new DragableData { Name = "Fred" });
-            SourceList.Add(new DragableData { Name = "Sally" });
-            SourceList.Add(new DragableData { Name = "Hank" });
-            SourceList.Add(new DragableData { Name = "Jane" });
+            ListOne.Add(new DragableData { Name = "Steve" });
+            ListOne.Add(new DragableData { Name = "Fred" });
+            ListOne.Add(new DragableData { Name = "Sally" });
+            ListOne.Add(new DragableData { Name = "Hank" });
+            ListOne.Add(new DragableData { Name = "Jane" });
 
-            TargetList.Add(new DragableData { Name = "Zach" });
+            ListTwo.Add(new DragableData { Name = "Zach" });
         }
 
-        public ObservableCollection<DragableData> SourceList { get; } = new ObservableCollection<DragableData>();
-        public ObservableCollection<DragableData> TargetList { get; } = new ObservableCollection<DragableData>();
+        public ObservableCollection<DragableData> ListOne { get; } = new ObservableCollection<DragableData>();
+        public ObservableCollection<DragableData> ListTwo { get; } = new ObservableCollection<DragableData>();
+
+        #region MoveFromListOneToListTwo Command
+
+        private ICommand _moveFromListOneToListTwoCommand;
+        public ICommand MoveFromListOneToListTwoCommand => _moveFromListOneToListTwoCommand ??
+            (_moveFromListOneToListTwoCommand = new RelayCommand<DragableData>(MoveFromListOneToListTwoAsync, MoveFromListOneToListTwoAsync_CanExecute));
+
+        private void MoveFromListOneToListTwoAsync(DragableData item)
+        {
+            ListOne.Remove(item);
+            ListTwo.Add(item);
+        }
+
+        private bool MoveFromListOneToListTwoAsync_CanExecute(DragableData item)
+        {
+            return item.Name != "Steve";
+        }
+
+        #endregion
+
+
+        #region MoveFromListTwoToListOne Command
+
+        private ICommand _moveFromListTwoToListOneCommand;
+        public ICommand MoveFromListTwoToListOneCommand => _moveFromListTwoToListOneCommand ??
+            (_moveFromListTwoToListOneCommand = new RelayCommand<DragableData>(MoveFromListTwoToListOneAsync));
+
+        private void MoveFromListTwoToListOneAsync(DragableData item)
+        {
+            ListTwo.Remove(item);
+            ListOne.Add(item);
+        }
+
+        #endregion
     }
 }

@@ -45,7 +45,14 @@ namespace Shared
             _canExecute = canExecute;
         }
 
-        public bool CanExecute(object parameter) => _canExecute?.Invoke((T)parameter) ?? true;
+        public bool CanExecute(object parameter)
+        {
+            if(!(parameter is T typedParameter))
+            {
+                return false;
+            }
+            return _canExecute?.Invoke(typedParameter) ?? true;
+        }
 
         public void Execute(object parameter) => _execute((T)parameter);
 

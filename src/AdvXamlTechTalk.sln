@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Behaviors", "Behaviors\Beha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragAndDropBehavior", "DragAndDropBehavior\DragAndDropBehavior.csproj", "{F4621F1C-6C96-43E2-B7FD-CA2B55738C05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkupExtensions", "MarkupExtensions\MarkupExtensions.csproj", "{A3BD03FC-74B5-4F02-9746-6C2984463C5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F4621F1C-6C96-43E2-B7FD-CA2B55738C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4621F1C-6C96-43E2-B7FD-CA2B55738C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4621F1C-6C96-43E2-B7FD-CA2B55738C05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3BD03FC-74B5-4F02-9746-6C2984463C5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3BD03FC-74B5-4F02-9746-6C2984463C5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3BD03FC-74B5-4F02-9746-6C2984463C5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3BD03FC-74B5-4F02-9746-6C2984463C5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,7 +6,9 @@
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:local="clr-namespace:Behaviors"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Behaviors" 
+        Height="450" 
+        Width="800">
     
     <Window.Resources>
 

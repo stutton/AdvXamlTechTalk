@@ -3,15 +3,42 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DragAndDrop"
         mc:Ignorable="d"
-        Title="MainWindow" 
+        Title="Drag and Drop" 
         Height="450" 
         Width="800">
-    <DockPanel Margin="32">
-        <TextBlock DockPanel.Dock="Top" 
-                   FontSize="32"
-                   Text="Drag and Drop Example"/>
-        <local:SimpleDragDrop Margin="0,24,0,0" />
-    </DockPanel>
+    
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Grid.Column="0">
+            
+            <TextBlock DockPanel.Dock="Top"
+                       Text="Source List" />
+            
+            <ListBox x:Name="DragSourceList"
+                     ItemsSource="{Binding ListOne}"
+                     DisplayMemberPath="Name"
+                     PreviewMouseLeftButtonDown="ListOne_MouseLeftButtonDown"/>
+            
+        </DockPanel>
+
+        <DockPanel Grid.Column="2">
+            
+            <TextBlock DockPanel.Dock="Top"
+                       Text="Target List" />
+            
+            <ListBox x:Name="DropTargetList"
+                     ItemsSource="{Binding ListTwo}"
+                     DisplayMemberPath="Name"
+                     AllowDrop="True"
+                     DragOver="ListTwo_DragOver"
+                     Drop="ListTwo_Drop"/>
+            
+        </DockPanel>
+    </Grid>
 </Window>
